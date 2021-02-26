@@ -52,9 +52,11 @@ public class a20fourFuncCal
             default:
                 System.out.println("\nInvalid operator");
         }
+            //if the user wants to continue
         System.out.println("\nDo you want to continue?");
         System.out.print("Enter (Y/N): ");
         ch = in.next().charAt(0);
+            //to ignore cases
         if (Character.toUpperCase(ch) != 'Y')
             flag = false;
         System.out.println(); // space
