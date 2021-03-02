@@ -12,7 +12,7 @@ public class a24factNumb
             factorial *= i;
         }
 
-        System.out.printf("Factorial of "+ num+" = " +num+"! = "+ factorial);
+        System.out.println("Factorial of "+ num+" = " +num+"! = "+ factorial);
     }
     public static void main(String[] args) {
 
@@ -21,7 +21,5 @@ public class a24factNumb
         System.out.print("Enter the number: ");
         num=in.nextInt();
         factorial(num);
-        long factorial = 1;
-
     }
 }
