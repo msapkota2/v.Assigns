@@ -15,7 +15,6 @@ public class a24factNumb
         System.out.println("Factorial of "+ num+" = " +num+"! = "+ factorial);
     }
     public static void main(String[] args) {
-
         Scanner in= new Scanner(System.in);
         int num;
         System.out.print("Enter the number: ");
