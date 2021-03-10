@@ -11,7 +11,7 @@ public class BankAccountMain
         double initialB;
         Scanner input=new Scanner(System.in);
 
-        System.out.println("=====Welcome to sample prototype of a Bank Account====\n");
+        System.out.println("=====Welcome to a sample prototype of a Bank Account====\n");
         System.out.println("Let's open a bank account");
         System.out.println("Enter the name: ");
         name= input.nextLine();
