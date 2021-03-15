@@ -12,7 +12,7 @@ public class a44insertAndSearch
         int n = in.nextInt();
         a44insertAndSearch std = new a44insertAndSearch();
         std.insertInfo(n);
-        PrintStream output = new PrintStream(new File("StudentDetails.txt"));
+        PrintStream output = new PrintStream(new File("./assignments/src/restAssigns/StudentDetails.txt"));
         output.println("Student Name"+"\t\t"+"Address");
         output.println("======================================");
         for(int i=0;i<n;i++)
