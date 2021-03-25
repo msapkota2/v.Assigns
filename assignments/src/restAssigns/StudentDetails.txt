@@ -1,6 +1,7 @@
 Student Name		Address
-======================================
-Milan		nepal		
-======================================
-sapkota		nepal		
-======================================
+
+abcd		Nepal
+
+xyzw		China
+
+abcd	  China

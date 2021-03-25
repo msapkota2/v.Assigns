@@ -52,20 +52,28 @@ public class a44insertAndSearch
     }
     void searchInfo()
     {
-        Scanner input=new Scanner(System.in);
-        System.out.println("Enter the full name of the student: ");
-        String Sname= input.nextLine();
-        File file = new File("StudentDetails.txt");
-        try (FileReader reader = new FileReader(file);)
-        {
-            System.out.println("Not Completed");
-            for(int i=0;i<10;i++)
-            {
+        //Scanner input=new Scanner(System.in);
+        File file = new File("./assignments/src/restAssigns/StudentDetails.txt");
+        try{
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader =new BufferedReader (fileReader);
+            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter the full name of the student: ");
+            String nameConsole=br.readLine();
+            //System.out.println(name);
+            String line;
+            while ((line=bufferedReader.readLine())!=null){
+                String nameFile=line.substring(0,line.indexOf("="));
+                if(nameFile.equalsIgnoreCase(nameConsole.toLowerCase())) {
+                    String address =line.substring(line.indexOf("=") + 1);
+                    System.out.println(address);
+                }
 
             }
-        } catch (Exception e) {
+        }catch (Exception e){
             e.printStackTrace();
         }
+
     }
 }
 
