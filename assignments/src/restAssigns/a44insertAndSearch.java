@@ -58,13 +58,15 @@ public class a44insertAndSearch
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader =new BufferedReader (fileReader);
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Enter the full name of the student: ");
+            System.out.println("Enter the  name of the student: ");
             String nameConsole=br.readLine();
             //System.out.println(name);
             String line;
-            while ((line=bufferedReader.readLine())!=null){
+            while ((line=bufferedReader.readLine())!=null)
+            {
                 String nameFile=line.substring(0,line.indexOf("="));
-                if(nameFile.equalsIgnoreCase(nameConsole.toLowerCase())) {
+                if(nameFile.equalsIgnoreCase(nameConsole.toLowerCase()))
+                {
                     String address =line.substring(line.indexOf("=") + 1);
                     System.out.println(address);
                 }

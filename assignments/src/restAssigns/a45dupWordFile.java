@@ -10,12 +10,12 @@ public class a45dupWordFile
         //map to get the details in a map
         Map<String, Integer> mapTxt = buildWordMap("assignments/src/restAssigns/StudentDetails.txt");
             //list the form
-        List<Map.Entry<String, Integer>> list = sortByValueInDecreasingOrder(mapTxt);
+        List<Map.Entry<String, Integer>> list = sortByValueIncreasingOrder(mapTxt);
         System.out.println(" ");
             //for each
         for (Map.Entry<String, Integer> entry : list)
         {
-            if (entry.getValue() > 1)
+            if (entry.getValue() > 1 && !entry.getKey().isEmpty())
             {
                 System.out.println("Word: "+ entry.getKey() + "\nCount:  " + entry.getValue());
             }
@@ -30,11 +30,12 @@ public class a45dupWordFile
                  DataInputStream input = new DataInputStream(file);
                  BufferedReader br = new BufferedReader(new InputStreamReader(input)))
         {
-            Pattern pattern = Pattern.compile("\\s+");
+
 
             while ((line = br.readLine()) != null )
         {
             line = line.toLowerCase();
+            Pattern pattern = Pattern.compile("\\s+");
             String[] words = pattern.split(line);
             for (String word : words)
             {
@@ -55,7 +56,7 @@ public class a45dupWordFile
         }
         return mapText;
     }
-    public static List<Map.Entry<String, Integer>> sortByValueInDecreasingOrder(Map<String, Integer> mapText)
+    public static List<Map.Entry<String, Integer>> sortByValueIncreasingOrder(Map<String, Integer> mapText)
     {
         Set<Map.Entry<String, Integer>> entries = mapText.entrySet();
         List<Map.Entry<String, Integer>> list = new ArrayList<>(entries);
@@ -64,7 +65,7 @@ public class a45dupWordFile
             @Override
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
             {
-                return (o2.getValue()).compareTo(o1.getValue());
+                return (o1.getValue()).compareTo(o2.getValue());
             }
         });
         return list;
